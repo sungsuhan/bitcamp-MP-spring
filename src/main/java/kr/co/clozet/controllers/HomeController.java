@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-@RestController
 
 /**
  * packageName:kr.co.clozet.controllers
@@ -18,6 +17,7 @@ import java.util.Date;
  * =============================================
  * 2022-05-03           sungsuhan      최초 생성
  **/
+@RestController
 public class HomeController {
     @GetMapping("/")
     public String now() {

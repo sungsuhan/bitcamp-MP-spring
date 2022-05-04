@@ -1,5 +1,8 @@
 package kr.co.clozet.repositories;
 
+
+import kr.co.clozet.domains.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -13,5 +16,6 @@ import org.springframework.stereotype.Repository;
  * =============================================
  * 2022-05-03           sungsuhan      최초 생성
  **/
-public interface UserRepository {
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
 }
