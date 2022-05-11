@@ -57,7 +57,9 @@ public class MemberCRUD {
         while (true) {
             System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByName 6.findAll 7.count 8.existsById 9.clear");
             switch (s.next()){
-                case "0":return;
+                case "0":
+                    System.out.println("exit");
+                    return;
                 case "1":
                     Member han = new Member.Builder("han")
                             .email("swhanss@naver.com")
@@ -77,22 +79,29 @@ public class MemberCRUD {
                     service.save(woo);
                     break;
                 case "2":
+
                     break;
                 case "3":
-                    Member temp = new Member();
-                    temp.setUserid("han");
-                    service.delete(temp);
+                    Member del = new Member();
+                    del.setUserid(s.next());
+                    service.delete(del);
                     break;
                 case "4":
                     System.out.println("어떤 ID 정보 볼래요?");
                     System.out.println(service.findById(s.next()));
                     break;
                 case "5":
+                    Member find =new Member();
+                    find.setName(s.next());
+                    service.findByName(find.name);
+                    String res1= find.name==null?"해당 이름을 가진 가입자가 없습니다.":"해당 이름을 가진 가입자가 있습니다.";
+                    System.out.println(res1);
                     break;
                 case "6":
+                    System.out.println("총 회원목록: "+service.findAll());
                     break;
                 case "7":
-                    System.out.println("총 회원수: "+service.count()+" 명");
+                    System.out.println("총 회원 수: "+service.count()+" 명");
                     break;
                 case "8":
                     System.out.println("어떤 ID 확인 할래요?");
@@ -100,6 +109,7 @@ public class MemberCRUD {
                     break;
                 case "9":
                     service.clear();
+                    break;
                 default:break;
             }
         }
@@ -112,7 +122,7 @@ public class MemberCRUD {
         void delete(Member member);
         Member findById (String id);
         List<Member> findByName (String name);
-        List<Member> findByAll();
+        List<Member> findAll();
         int count();
         boolean existsById (String id);
         void clear();
@@ -121,7 +131,7 @@ public class MemberCRUD {
     static class MemberServiceImpl implements MemberService{
         private final Map<String, Member> map;
 
-        MemberServiceImpl(){
+        public MemberServiceImpl(){
             this.map = new HashMap<>();
         }
 
@@ -151,8 +161,8 @@ public class MemberCRUD {
         }
 
         @Override
-        public List<Member> findByAll() {
-            return (List<Member>) map.get(map.keySet());
+        public List<Member> findAll() {
+            return (List<Member>) map.values();
         }
 
         @Override
