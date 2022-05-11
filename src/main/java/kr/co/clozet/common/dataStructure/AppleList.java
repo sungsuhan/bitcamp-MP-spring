@@ -27,7 +27,7 @@ public class AppleList {
         Scanner s = new Scanner(System.in);
         AppleService service = new AppleServiceImpl();
         while(true){
-            System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByOrigin 6.findAll 7.count 8.existsById 9.clear");
+            System.out.println("0.exit 1.save 2.update 3.delete 4.findAll 5.findByOrigin 6.findByColor 7.findById 8.count 9.clear 10.lambda");
             switch (s.next()){
                 case "0":return;
                 case "1":
@@ -49,7 +49,6 @@ public class AppleList {
                             .price(2000)
                             .build();
                     service.save(pg);
-
                     break;
                 case "2":
 
@@ -58,27 +57,26 @@ public class AppleList {
 
                     break;
                 case "4":
-
+                    System.out.println("모든 사과 스펙: "+service.findAll());
                     break;
                 case "5":
-                    System.out.println("어느 지역 사과?");
+                    System.out.println("영동 지역 사과");
                     System.out.println(service.findByOrigin("영동"));
                     break;
                 case "6":
-                    System.out.println("무슨 색깔 사과?");
-                    System.out.println(service.findByColor("영동"));
+                    System.out.println("파란색 사과");
+                    System.out.println(service.findByColor("BLUE"));
                     break;
                 case "7":
-                    System.out.println("6.findAll: \n"+service.findAll());
+                    System.out.println(service.findById(0));
                     break;
                 case "8":
                     System.out.println("총 사과 수: "+service.count()+" 개");
                     break;
-                case "9":break;
-                case "10":
+                case "9":
                     service.clear();
                     break;
-                case "11":
+                case "10":
                     System.out.println("사과 가격은 "+ integer("1000"));
                     System.out.println("내가 만든 배열의 사이즈는 "+ array(7));
                     break;
