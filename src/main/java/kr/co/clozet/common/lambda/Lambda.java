@@ -1,14 +1,10 @@
 package kr.co.clozet.common.lambda;
 
-import com.sun.jdi.IntegerType;
-
 import static kr.co.clozet.common.dataStructure.AppleList.Apple;
 
-import java.lang.reflect.Array;
+import java.io.File;
 import java.util.Arrays;
-import java.util.function.BiPredicate;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.function.*;
 
 /**
  * packageName:kr.co.clozet.common.lambda
@@ -36,14 +32,15 @@ public class Lambda {
         );
         System.out.println(Lambda.equals("1", "3"));
         System.out.println(array(7).length);
+        System.out.println(random(1,6));
     }
+    // int i = Integer.parseInt("900");
     public static int integer(String arg){
-        // Integer i = Integer.parseInt("900");
         Function<String, Integer> f = Integer::parseInt;
         return f.apply(arg);
     }
+    // String s = String.valueOf(o)
     public static String string(Object o){
-        // String s = String.valueOf(o)
         Function<Object, String> s = String::valueOf;
         return s.apply(o);
     }
@@ -51,11 +48,20 @@ public class Lambda {
         BiPredicate<String, String> f = String::equals;
         return f.test(s1, s2);
     }
-
+    // int[] arr = new int[8];
     public static int[] array(int i){
-        // int[] arr = new int[8];
         Function<Integer, int[]> a = int[]::new;
         return a.apply(i);
+    }
+    // int r = random(1, 6)
+    public static int random(int min, int max){
+        BiFunction<Integer, Integer, Integer> r = (t, u) -> (int)(Math.random()*u)+t;
+        return r.apply(min, max);
+    }
+    // File file = new File("d:\\example\\new_directory");
+    public static File makeFile(String s){
+        Function<String, File> f = File::new;
+        return f.apply(s);
     }
 
 
