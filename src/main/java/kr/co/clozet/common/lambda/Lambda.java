@@ -1,5 +1,7 @@
 package kr.co.clozet.common.lambda;
 
+import org.junit.jupiter.api.Test;
+
 import static kr.co.clozet.common.dataStructure.AppleList.Apple;
 
 import java.io.File;
@@ -18,22 +20,7 @@ import java.util.function.*;
  * 2022-05-11           sungsuhan      최초 생성
  **/
 public class Lambda {
-    public static void main(String[] args) {
-        System.out.println(Lambda.integer("900"));
-        System.out.println(Lambda.string(1200));
-        System.out.println(string(new Apple.Builder().origin("영동").color("RED").price(3000).build()));
-        System.out.println(
-                string(
-                        Arrays.asList(
-                        new Apple.Builder().origin("영동").color("RED").price(1000).build(),
-                        new Apple.Builder().origin("영동").color("BLUE").price(2000).build(),
-                        new Apple.Builder().origin("풍기").color("RED").price(3000).build()
-                        ))
-        );
-        System.out.println(Lambda.equals("1", "3"));
-        System.out.println(array(7).length);
-        System.out.println(random(1,6));
-    }
+
     // int i = Integer.parseInt("900");
     public static int integer(String arg){
         Function<String, Integer> f = Integer::parseInt;
@@ -62,6 +49,24 @@ public class Lambda {
     public static File makeFile(String s){
         Function<String, File> f = File::new;
         return f.apply(s);
+    }
+
+    @Test
+    void lambdaTest() {
+        System.out.println(Lambda.integer("900"));
+        System.out.println(Lambda.string(1200));
+        System.out.println(string(new Apple.Builder().origin("영동").color("RED").price(3000).build()));
+        System.out.println(
+                string(
+                        Arrays.asList(
+                                new Apple.Builder().origin("영동").color("RED").price(1000).build(),
+                                new Apple.Builder().origin("영동").color("BLUE").price(2000).build(),
+                                new Apple.Builder().origin("풍기").color("RED").price(3000).build()
+                        ))
+        );
+        System.out.println(Lambda.equals("1", "3"));
+        System.out.println(array(7).length);
+        System.out.println(random(1,6));
     }
 
 
