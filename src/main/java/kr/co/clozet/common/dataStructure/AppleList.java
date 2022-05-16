@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import static kr.co.clozet.common.lambda.Lambda.*;
+import static kr.co.clozet.common.lambdas.Lambda.*;
 
 /**
  * packageName:kr.co.clozet.common.dataStructure

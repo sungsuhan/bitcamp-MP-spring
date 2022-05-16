@@ -1,4 +1,4 @@
-package kr.co.clozet.common.lambda;
+package kr.co.clozet.common.lambdas;
 
 /**
  * packageName:kr.co.clozet.common.lambda
