@@ -1,6 +1,6 @@
 package kr.co.clozet.soccer.domains;
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -16,18 +16,20 @@ import javax.persistence.*;
  * =============================================
  * 2022-05-09           sungsuhan      최초 생성
  **/
-@Data
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Component
 @Entity
 @Table(name="players")
 public class Player {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "player_no")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) private long playerNo;
     @Column(nullable = false) private String playerId;
     @Column(nullable = false) private String playerName;
-    private String teamId;
     private String ePlayerName;
     private String nickname;
     private String joinYyyy;
@@ -38,8 +40,11 @@ public class Player {
     private String solar;
     private String height;
     private String weight;
+    private String teamId;
 
-
+    @ManyToOne
+    @JoinColumn(name = "team_no")
+    private Team team;
 
 
 }

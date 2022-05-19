@@ -1,9 +1,11 @@
 package kr.co.clozet.soccer.domains;
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * packageName:kr.co.clozet.soccer.domains
@@ -16,21 +18,24 @@ import javax.persistence.*;
  * =============================================
  * 2022-05-09           sungsuhan      최초 생성
  **/
-@Data
+@Builder
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Component
 @Entity
 @Table(name="teams")
 public class Team {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String teamId;
+    @Column(name = "team_no")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) private long teamNo;
+    @Column(nullable = false) private String teamId;
+    @Column(nullable = false) private String stadiumId;
     private String regionName;
-    @Column(nullable = false) private String teamName;
+    private String teamName;
     private String eTeamName;
     private String origYyyy;
-    private String stadiumId;
     private String zipCode1;
     private String zipCode2;
     private String address;
@@ -40,6 +45,8 @@ public class Team {
     private String homepage;
     private String owner;
 
+    @OneToMany(mappedBy = "team")
+    List<Player> players = new ArrayList<>();
 
 
 }
