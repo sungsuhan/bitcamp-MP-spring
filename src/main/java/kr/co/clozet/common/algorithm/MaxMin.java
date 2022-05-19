@@ -25,7 +25,7 @@ public class MaxMin {
     @Getter
     private static class Solution{
         private int[] arr;
-        private int max, min, elem;
+        private int max, min;
 
         @Override
         public String toString() {

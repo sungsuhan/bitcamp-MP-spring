@@ -25,7 +25,7 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String playerId;
+    @Column(nullable = false) private String playerId;
     @Column(nullable = false) private String playerName;
     private String teamId;
     private String ePlayerName;

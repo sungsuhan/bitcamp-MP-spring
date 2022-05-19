@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 /**
  * packageName:kr.co.clozet.board.domains
- * fileName        :Article.java
+ * fileName        :Article2.java
  * author          : sungsuhan
  * date            :2022-05-09
  * desc            :
@@ -16,11 +16,11 @@ import javax.persistence.*;
  * =============================================
  * 2022-05-09           sungsuhan      최초 생성
  **/
-@Data
-@Component
-@Entity
-@Table(name="articles")
-public class Article {
+//@Data
+//@Component
+//@Entity
+//@Table(name="articles")
+public class Article2 {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

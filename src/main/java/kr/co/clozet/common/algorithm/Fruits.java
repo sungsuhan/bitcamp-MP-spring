@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 
 /**
  * packageName:kr.co.clozet.common.algorithm
@@ -34,7 +33,7 @@ public class Fruits {
         }
     }
 
-    @FunctionalInterface private interface SolutionService{
+    @FunctionalInterface private interface ISolution{
         Solution solution(Solution s);
     }
 
@@ -49,6 +48,27 @@ public class Fruits {
                 {35000, 30000, 25000},
                 {50000, 23000, 10000}
         };
+        ISolution f = e -> {
+            int sum = 0;
+            int apple = 0;
+            int grape = 0;
+            int orange = 0;
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[i].length; j++) {
+                    if (j==0) {
+                        apple += arr[i][j];
+                    } else if (j==1) {
+                        grape += arr[i][j];
+                    } else {
+                        orange += arr[i][j];
+                    }
+                    sum += arr[i][j];
+                }
+            }
+            return Solution.builder().sum(sum).avgA(apple/arr.length).avgG(grape/arr.length).avgO(orange/arr.length).build();
+        };
+        Solution s = Solution.builder().arr(arr).build();
+        System.out.println(f.solution(s));
     }
 
 
