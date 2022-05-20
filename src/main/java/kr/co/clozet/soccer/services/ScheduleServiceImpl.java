@@ -30,47 +30,49 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Override
     public List<Schedule> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public List<Schedule> findAll(Sort sort) {
-        return null;
+        return repository.findAll(sort);
     }
 
     @Override
     public Page<Schedule> findAll(Pageable pageable) {
-        return null;
+        return repository.findAll(pageable);
     }
 
     @Override
     public long count() {
-        return 0;
+        return repository.count();
     }
 
     @Override
     public String put(Schedule schedule) {
-        return null;
+        return "";
     }
 
     @Override
     public String delete(Schedule schedule) {
-        return null;
+        repository.delete(schedule);
+        return "";
     }
 
     @Override
     public String save(Schedule schedule) {
-        return null;
+        repository.save(schedule);
+        return "";
     }
 
     @Override
     public Optional<Schedule> findById(String Schedule) {
-        return Optional.empty();
+        return repository.findById(0L);
     }
 
     @Override
     public boolean existsById(String Schedule) {
-        return false;
+        return repository.existsById(0L);
     }
 
     @Override

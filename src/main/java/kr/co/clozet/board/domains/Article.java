@@ -1,6 +1,7 @@
-package kr.co.clozet.auth.domains;
+package kr.co.clozet.board.domains;
 
 import com.sun.istack.NotNull;
+import kr.co.clozet.auth.domains.User;
 import lombok.*;
 import org.springframework.stereotype.Component;
 

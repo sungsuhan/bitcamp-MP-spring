@@ -37,47 +37,49 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public List<User> findAll(Sort sort) {
-        return null;
+        return repository.findAll(sort);
     }
 
     @Override
     public Page<User> findAll(Pageable pageable) {
-        return null;
+        return repository.findAll(pageable);
     }
 
     @Override
     public long count() {
-        return 0;
+        return repository.count();
     }
 
     @Override
     public String put(User user) {
-        return null;
+        return "";
     }
 
     @Override
     public String delete(User user) {
-        return null;
+        repository.delete(user);
+        return "";
     }
 
     @Override
     public String save(User user) {
-        return null;
+        repository.save(user);
+        return "";
     }
 
     @Override
     public Optional<User> findById(String userid) {
-        return Optional.empty();
+        return repository.findById(0L);
     }
 
     @Override
     public boolean existsById(String userid) {
-        return false;
+        return repository.existsById(0L);
     }
 
     // custom
