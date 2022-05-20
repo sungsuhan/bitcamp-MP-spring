@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * packageName:kr.co.clozet.services
@@ -56,5 +57,15 @@ public class BoardServiceImpl implements BoardService {
     public String save(Board board) {
         repository.save(board);
         return "";
+    }
+
+    @Override
+    public Optional<Board> findById(String board) {
+        return repository.findById(0L);
+    }
+
+    @Override
+    public boolean existsById(String board) {
+        return repository.existsById(0L);
     }
 }

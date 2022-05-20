@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String put(User user) {
+    public String update(User user) {
         return "";
     }
 

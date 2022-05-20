@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -54,10 +55,19 @@ public class ArticleController {
         return service.delete(article);
     }
 
-    @PostMapping("/save")
+    @PostMapping("/join")
     public String save(@RequestBody Article article) {
         return service.save(article);
     }
 
+    @GetMapping("/findById/{article}")
+    public Optional<Article> findById(@PathVariable String article) {
+        return service.findById(article);
+    }
+
+    @GetMapping("/existsById/{article}")
+    public boolean existsById(@PathVariable String article) {
+        return service.existsById(article);
+    }
 
 }

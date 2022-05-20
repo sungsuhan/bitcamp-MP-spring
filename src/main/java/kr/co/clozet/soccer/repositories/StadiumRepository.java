@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
  * 2022-05-09           sungsuhan      최초 생성
  **/
 interface StadiumCustomRepository{
+    // 스타디움 전화번호 tel 을 변경하도록 하시오
 
 }
 

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * packageName:kr.co.clozet.controllers
@@ -53,11 +54,19 @@ public class BoardController {
         return service.delete(board);
     }
 
-    @PostMapping("/save")
+    @PostMapping("/join")
     public String save(@RequestBody Board board) {
         return service.save(board);
     }
 
+    @GetMapping("/findById/{board}")
+    public Optional<Board> findById(@PathVariable String board) {
+        return service.findById(board);
+    }
 
+    @GetMapping("/existsById/{board}")
+    public boolean existsById(@PathVariable String board) {
+        return service.existsById(board);
+    }
 
 }

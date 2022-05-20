@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * packageName:kr.co.clozet.board.services
@@ -30,5 +31,9 @@ public interface ArticleService {
     String delete(Article article);
 
     String save(Article article);
+
+    Optional<Article> findById(String article);
+
+    boolean existsById(String article);
 
 }
