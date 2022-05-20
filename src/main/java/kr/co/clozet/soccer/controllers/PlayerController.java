@@ -25,7 +25,7 @@ import java.util.Optional;
  **/
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/player")
+@RequestMapping("/players")
 public class PlayerController {
 
     private final PlayerService service;

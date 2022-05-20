@@ -22,7 +22,7 @@ import java.util.List;
  * 2022-05-04           sungsuhan      최초 생성
  **/
 @RestController
-@RequestMapping("/board")
+@RequestMapping("/boards")
 @RequiredArgsConstructor
 public class BoardController {
 

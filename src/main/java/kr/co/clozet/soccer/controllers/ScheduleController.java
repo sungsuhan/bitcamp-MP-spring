@@ -25,7 +25,7 @@ import java.util.Optional;
  **/
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/schedule")
+@RequestMapping("/schedules")
 public class ScheduleController {
 
     private final ScheduleService service;

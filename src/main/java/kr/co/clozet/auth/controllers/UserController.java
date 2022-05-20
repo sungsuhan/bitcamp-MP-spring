@@ -23,7 +23,7 @@ import java.util.Optional;
  * 2022-05-03           sungsuhan      최초 생성
  **/
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
