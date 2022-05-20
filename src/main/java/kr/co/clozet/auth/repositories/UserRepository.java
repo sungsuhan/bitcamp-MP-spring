@@ -23,6 +23,6 @@ interface UserCustomRepository{
 
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long>, UserCustomRepository{
+public interface UserRepository extends JpaRepository<User, Long>{
 
 }
