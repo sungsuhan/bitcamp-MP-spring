@@ -38,7 +38,7 @@ interface TeamCustomRepository{
 }
 
 @Repository
-public interface TeamRepository extends JpaRepository<Team, Long>, TeamCustomRepository{
+public interface TeamRepository extends JpaRepository<Team, Long>{
 
 
 }

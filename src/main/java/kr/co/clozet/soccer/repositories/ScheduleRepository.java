@@ -21,5 +21,5 @@ interface ScheduleCustomRepository{
 }
 
 @Repository
-public interface ScheduleRepository extends JpaRepository<Schedule, Long>, ScheduleCustomRepository{
+public interface ScheduleRepository extends JpaRepository<Schedule, Long>{
 }
