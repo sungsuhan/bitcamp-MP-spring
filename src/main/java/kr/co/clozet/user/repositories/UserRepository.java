@@ -1,10 +1,12 @@
-package kr.co.clozet.auth.repositories;
+package kr.co.clozet.user.repositories;
 
-import kr.co.clozet.auth.domains.User;
+import kr.co.clozet.user.domains.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 /**
  * packageName:kr.co.clozet.repositories
@@ -31,5 +33,6 @@ interface UserCustomRepository{
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+    Optional<User> findByUsername(String username);
 
 }

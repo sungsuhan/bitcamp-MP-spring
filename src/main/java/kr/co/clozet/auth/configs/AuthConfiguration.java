@@ -1,4 +1,4 @@
-package kr.co.clozet.security.configs;
+package kr.co.clozet.auth.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -19,7 +19,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
  * 2022-05-23           sungsuhan      최초 생성
  **/
 @Configuration
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class AuthConfiguration extends WebSecurityConfigurerAdapter {
     // 보안 무시할 수 있는것들 (홈화면)
     @Override
     public void configure(WebSecurity web) throws Exception {

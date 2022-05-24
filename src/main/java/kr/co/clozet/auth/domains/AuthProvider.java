@@ -1,6 +1,7 @@
-package kr.co.clozet.security.domains;
+package kr.co.clozet.auth.domains;
 
-import kr.co.clozet.auth.domains.Role;
+import kr.co.clozet.user.domains.Role;
+import kr.co.clozet.auth.services.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,9 +28,9 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 @Log
-public class SecurityProvider implements AuthenticationProvider {
+public class AuthProvider implements AuthenticationProvider {
 
-    private final UserDetailsServiceImpl service;
+    private final AuthServiceImpl service;
 
     @Value("${security.jwt.token.security-key:secret-key}")
     private String securityKey;
