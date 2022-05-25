@@ -4,7 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import kr.co.clozet.auth.domains.Auth;
 import kr.co.clozet.user.domains.Role;
 import kr.co.clozet.auth.services.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;

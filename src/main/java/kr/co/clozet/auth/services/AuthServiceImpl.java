@@ -16,7 +16,7 @@ import java.util.Optional;
  * fileName        :UserDetailsServiceImpl.java
  * author          : sungsuhan
  * date            :2022-05-23
- * desc            :
+ * desc            : 회원가입할때
  * =============================================
  * DATE              AUTHOR        NOTE
  * =============================================

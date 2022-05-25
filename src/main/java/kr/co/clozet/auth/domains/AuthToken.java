@@ -20,7 +20,6 @@ import java.util.Map;
  * 2022-05-23           sungsuhan      최초 생성
  **/
 @Log
-@Builder
 public class AuthToken {
     private String token;
     private String key;
