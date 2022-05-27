@@ -19,6 +19,9 @@ import java.util.List;
  * =============================================
  * 2022-05-03           sungsuhan      최초 생성
  **/
+@ToString
+@Setter // modelMapper 를 사용하기 위해
+
 @Builder
 @Getter
 @NoArgsConstructor
